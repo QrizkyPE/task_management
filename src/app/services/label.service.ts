@@ -14,7 +14,7 @@ export interface Label {
   providedIn: 'root'
 })
 export class LabelService {
-  private apiUrl = `${environment.apiUrl}/labels`;
+  private apiUrl = `${environment.apiUrl}/api/labels`;
 
   constructor(private http: HttpClient) {}
 
