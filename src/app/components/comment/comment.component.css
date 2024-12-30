@@ -1,0 +1,58 @@
+.comments-section {
+  margin-top: 20px;
+}
+
+.comment-form {
+  margin-bottom: 20px;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.comments-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.comment-card {
+  position: relative;
+}
+
+.comment-card mat-card-header {
+  margin-bottom: 8px;
+}
+
+.comment-card mat-card-content {
+  padding: 0 16px 16px 16px;
+}
+
+.delete-button {
+  position: absolute;
+  right: 8px;
+  top: 8px;
+}
+
+.no-comments {
+  text-align: center;
+  color: rgba(0, 0, 0, 0.6);
+  margin: 20px 0;
+}
+
+mat-card-title {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+mat-card-subtitle {
+  font-size: 0.8rem;
+}
+
+button[mat-raised-button] {
+  margin-top: 8px;
+}
+
+textarea {
+  resize: none;
+} 

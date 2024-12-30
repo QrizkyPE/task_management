@@ -1,0 +1,50 @@
+<div class="comments-section">
+  <h3>Comments</h3>
+  
+  <!-- Add Comment Form -->
+  <mat-card class="comment-form">
+    <mat-card-content>
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Add a comment</mat-label>
+        <textarea matInput
+                  [(ngModel)]="newComment"
+                  placeholder="Write your comment here..."
+                  rows="2"></textarea>
+      </mat-form-field>
+      <button mat-raised-button 
+              color="primary" 
+              [disabled]="!newComment.trim()"
+              (click)="onSubmit()">
+        Add Comment
+      </button>
+    </mat-card-content>
+  </mat-card>
+
+  <!-- Comments List -->
+  <div class="comments-list">
+    @if (comments.length === 0) {
+      <p class="no-comments">No comments yet</p>
+    }
+    @for (comment of comments; track comment._id) {
+      <mat-card class="comment-card">
+        <mat-card-header>
+          <mat-card-title-group>
+            <mat-card-title>{{ comment.username }}</mat-card-title>
+            <mat-card-subtitle>{{ formatDate(comment.createdAt) }}</mat-card-subtitle>
+          </mat-card-title-group>
+          @if (canDelete(comment)) {
+            <button mat-icon-button 
+                    color="warn" 
+                    class="delete-button"
+                    (click)="deleteComment(comment._id)">
+              <mat-icon>delete</mat-icon>
+            </button>
+          }
+        </mat-card-header>
+        <mat-card-content>
+          <p>{{ comment.content }}</p>
+        </mat-card-content>
+      </mat-card>
+    }
+  </div>
+</div> 

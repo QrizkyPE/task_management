@@ -1,0 +1,77 @@
+.dashboard-container {
+  padding: 20px;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.stat-card {
+  height: 100px;
+}
+
+.stat-card mat-card-content {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.stat-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 16px;
+}
+
+.stat-icon mat-icon {
+  font-size: 30px;
+  width: 30px;
+  height: 30px;
+  color: white;
+}
+
+.stat-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.stat-value {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.stat-label {
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.total .stat-icon {
+  background-color: #2196F3;
+}
+
+.completed .stat-icon {
+  background-color: #4CAF50;
+}
+
+.in-progress .stat-icon {
+  background-color: #FF9800;
+}
+
+.high-priority .stat-icon {
+  background-color: #f44336;
+}
+
+.progress-card {
+  margin-top: 20px;
+}
+
+.progress-label {
+  text-align: center;
+  margin-top: 8px;
+  color: rgba(0, 0, 0, 0.6);
+}

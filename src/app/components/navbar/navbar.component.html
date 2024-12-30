@@ -1,0 +1,43 @@
+<mat-toolbar color="primary">
+  <span routerLink="/dashboard" class="brand-name">Task Manager</span>
+  
+  <span class="spacer"></span>
+  
+  <nav>
+    <a mat-button routerLink="/dashboard" routerLinkActive="active">
+      <mat-icon>dashboard</mat-icon>
+      Dashboard
+    </a>
+    <a mat-button routerLink="/tasks" routerLinkActive="active">
+      <mat-icon>task</mat-icon>
+      Tasks
+    </a>
+    <a mat-button routerLink="/projects" routerLinkActive="active">
+      <mat-icon>folder</mat-icon>
+      Projects
+    </a>
+    <a mat-button routerLink="/categories" routerLinkActive="active">
+      <mat-icon>category</mat-icon>
+      Categories
+    </a>
+    <a mat-button routerLink="/labels" routerLinkActive="active">
+      <mat-icon>label</mat-icon>
+      Labels
+    </a>
+    
+    <button mat-button [matMenuTriggerFor]="menu">
+      <mat-icon>account_circle</mat-icon>
+      Profile
+    </button>
+    <mat-menu #menu="matMenu">
+      <a mat-menu-item routerLink="/profile">
+        <mat-icon>person</mat-icon>
+        <span>My Profile</span>
+      </a>
+      <button mat-menu-item (click)="logout()">
+        <mat-icon>exit_to_app</mat-icon>
+        <span>Logout</span>
+      </button>
+    </mat-menu>
+  </nav>
+</mat-toolbar> 

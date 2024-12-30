@@ -1,0 +1,61 @@
+.tasks-container {
+  padding: 20px;
+}
+
+.tasks-card {
+  margin-bottom: 20px;
+}
+
+.task-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.task-item {
+  margin: 0;
+}
+
+.task-actions {
+  position: absolute;
+  right: 8px;
+  top: 8px;
+}
+
+.category-title {
+  margin: 16px 0;
+  color: #666;
+  font-weight: 500;
+}
+
+/* Priority colors */
+.low-priority {
+  background-color: #4caf50 !important;
+}
+
+.medium-priority {
+  background-color: #ff9800 !important;
+}
+
+.high-priority {
+  background-color: #f44336 !important;
+}
+
+.mat-mdc-chip.low-priority .mdc-evolution-chip__text-label,
+.mat-mdc-chip.medium-priority .mdc-evolution-chip__text-label,
+.mat-mdc-chip.high-priority .mdc-evolution-chip__text-label {
+  color: white !important;
+}
+
+mat-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 16px;
+}
+
+mat-card-title {
+  margin: 0;
+  font-size: 1.1em;
+}

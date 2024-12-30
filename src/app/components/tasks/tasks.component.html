@@ -1,0 +1,23 @@
+<div class="tasks-container">
+  <!-- Categorized Tasks -->
+  <div class="categories-section">
+    <div *ngFor="let category of categories">
+      <h3 class="category-title" *ngIf="tasksByCategory[category._id!]?.length">
+        {{ category.name }}
+      </h3>
+      <mat-card *ngFor="let task of tasksByCategory[category._id!]" class="task-card">
+        <!-- Task content -->
+      </mat-card>
+    </div>
+  </div>
+
+  <!-- Uncategorized Tasks -->
+  <div class="uncategorized-section">
+    <h3 class="category-title" *ngIf="tasksByCategory['uncategorized']?.length">
+      Uncategorized
+    </h3>
+    <mat-card *ngFor="let task of tasksByCategory['uncategorized']" class="task-card">
+      <!-- Task content -->
+    </mat-card>
+  </div>
+</div>

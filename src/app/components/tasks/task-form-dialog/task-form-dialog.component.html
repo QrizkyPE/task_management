@@ -1,0 +1,18 @@
+<mat-form-field>
+  <mat-label>Priority</mat-label>
+  <mat-select formControlName="priority">
+    <mat-option *ngFor="let priority of priorities" [value]="priority.value">
+      {{ priority.label }}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+
+<mat-form-field>
+  <mat-label>Category</mat-label>
+  <mat-select formControlName="categoryId">
+    <mat-option [value]="null">None</mat-option>
+    <mat-option *ngFor="let category of categories" [value]="category._id">
+      {{ category.name }}
+    </mat-option>
+  </mat-select>
+</mat-form-field> 

@@ -1,0 +1,23 @@
+.categories-container {
+  padding: 20px;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+table {
+  width: 100%;
+  margin-top: 20px;
+}
+
+.mat-column-actions {
+  width: 100px;
+  text-align: center;
+}
+
+mat-card-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
