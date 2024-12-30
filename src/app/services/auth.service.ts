@@ -34,7 +34,10 @@ export class AuthService {
     private http: HttpClient,
     private router: Router
   ) {
-    // Check if user is already logged in
+    if (typeof window === 'undefined') {
+      return;
+    }
+    
     const token = localStorage.getItem('token');
     const user = localStorage.getItem('user');
     if (token && user) {
@@ -56,6 +59,9 @@ export class AuthService {
     return this.http.post<AuthResponse>(`${this.apiUrl}/register`, userData).pipe(
       tap(response => {
         // Save token and user data
+        if (typeof window === 'undefined') {
+          return;
+        }
         localStorage.setItem('token', response.token);
         localStorage.setItem('user', JSON.stringify(response.user));
         this.userSubject.next(response.user);
@@ -66,6 +72,9 @@ export class AuthService {
   login(credentials: { email: string; password: string }): Observable<AuthResponse> {
     return this.http.post<AuthResponse>(`${this.apiUrl}/login`, credentials).pipe(
       tap(response => {
+        if (typeof window === 'undefined') {
+          return;
+        }
         localStorage.setItem('token', response.token);
         localStorage.setItem('user', JSON.stringify(response.user));
         this.userSubject.next(response.user);
@@ -74,6 +83,9 @@ export class AuthService {
   }
 
   logout(): void {
+    if (typeof window === 'undefined') {
+      return;
+    }
     localStorage.removeItem('token');
     localStorage.removeItem('user');
     this.userSubject.next(null);
@@ -81,10 +93,16 @@ export class AuthService {
   }
 
   isLoggedIn(): boolean {
+    if (typeof window === 'undefined') {
+      return false;
+    }
     return !!localStorage.getItem('token');
   }
 
   getToken(): string | null {
+    if (typeof window === 'undefined') {
+      return null;
+    }
     return localStorage.getItem('token');
   }
 
